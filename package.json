@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "start:server": "./server/pocketbase serve",
     "start:dev": "cross-env ENV_MODE=development next dev",
     "start:prom": "cross-env ENV_MODE=prom next start",
     "build:dev": "cross-env ENV_MODE=development next build",
