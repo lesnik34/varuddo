@@ -1,0 +1,16 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-config-rational-order"],
+  "plugin": ["stylelint-order"],
+  "rules": {
+    "indentation": [1],
+    "color-hex-case": "upper",
+    "order/properties-order": [],
+    "plugin/rational-order": [
+      true,
+      {
+        "border-in-box-model": false,
+        "empty-line-between-groups": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+@import './variables.scss';
+
+@mixin shimmer {
+  animation: shimmer 2s linear infinite;
+  background: linear-gradient(to right, $secondary-grey 4%, #e2e2e2 25%, $secondary-grey 36%);
+  background-size: 1000px 100%;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}

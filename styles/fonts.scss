@@ -1,0 +1,31 @@
+@font-face {
+  font-weight: 400;
+  font-family: "Abril Fatface";
+  font-style: normal;
+  src: local("Abril Fatface"), url("./fonts/AbrilFatface-Regular.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 400;
+  font-family: "PT Mono";
+  font-style: normal;
+  src: local("PT Mono"), url("./fonts/PTMono-Regular.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 400;
+  font-family: "RobotoCondensed";
+  font-style: normal;
+  src: local("RobotoCondensed"), url("./fonts/RobotoCondensed-Regular.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 600;
+  font-family: "RobotoCondensed";
+  font-style: normal;
+  src: local("RobotoCondensed"), url("./fonts/RobotoCondensed-Bold.ttf");
+  font-display: swap;
+}
