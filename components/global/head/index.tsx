@@ -4,26 +4,21 @@ import Head from 'next/head';
 const CustomHead = () => (
   <Head>
     <title key="title" itemProp="headline">
-      Заголовок
+      Varuddo
     </title>
-    <link rel="canonical" href="https://test.ru" />
+    <link rel="canonical" href="https://varuddo.com" />
 
-    <meta name="title" content="Заголовок" />
-    <meta itemProp="keywords" name="keywords" content="Ключевые слова" />
-    <meta itemProp="description" name="description" content="Описание" />
+    <meta name="title" content="Varuddo" />
+    <meta itemProp="keywords" name="keywords" content="Фотограф, Фотография, фотосессия" />
+    <meta itemProp="description" name="description" content="Фотограф" />
 
     <meta property="og:type" content="WebSite" />
-    <meta property="og:title" content="Заголовок" />
+    <meta property="og:title" content="Varuddo" />
     <meta property="og:image" content="https://static.url/image.png" />
-    <meta property="og:url" content="https://test.ru" />
-    <meta property="og:site_name" content="Название сайта" />
-    <meta property="og:description" content="Описание" />
+    <meta property="og:url" content="https://varuddo.com" />
+    <meta property="og:site_name" content="Varuddo" />
+    <meta property="og:description" content="Фотограф" />
 
-    <link rel="manifest" href="fav/site.webmanifest.json" />
-    <meta name="msapplication-TileColor" content="#000000" />
-    <meta name="robots" content="all" />
-    <meta name="msapplication-TileImage" content="fav/ms-icon-144x144.png" />
-    <meta name="theme-color" content="#ffffff" />
     <link rel="apple-touch-icon" sizes="180x180" href="fav/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="fav/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="fav/favicon-16x16.png" />
