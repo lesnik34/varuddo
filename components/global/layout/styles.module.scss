@@ -1,0 +1,11 @@
+@import '@styles/variables.scss';
+
+.wrapper {
+  padding-top: 117px;
+
+  @media (min-width: $tablet-width) {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    padding-top: 50px;
+  }
+}

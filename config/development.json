@@ -1,4 +1,5 @@
 {
-  "RES_URL": "http://localhost:80/api",
-  "STATIC_URL": "http://localhost:80/api"
+  "RES_URL": "http://localhost:8090/api",
+  "MAILER_URL": "http://localhost:8080/api",
+  "STATIC_URL": "http://localhost:8090/api/files"
 }

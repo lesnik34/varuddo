@@ -2,19 +2,25 @@ import React from 'react';
 import type { GetStaticProps } from 'next';
 
 import Api from '@/api';
+import Portfolio from '@/components/portfolio';
 import Layout from '@components/global/layout';
+import { PortfolioListI, DefaultListResponseI } from '@/api/types';
 
 interface HomeI {
-  results: any;
+  portfolio: DefaultListResponseI<PortfolioListI> | {};
 }
 
-const Home: React.FC<HomeI> = ({ results = {} }) => <Layout>{JSON.stringify(results)}</Layout>;
+const Home: React.FC<HomeI> = ({ portfolio }) => (
+  <Layout>
+    <Portfolio portfolio={'items' in portfolio ? portfolio.items : []} />
+  </Layout>
+);
 
 export const getStaticProps: GetStaticProps = async () => {
-  const results = await Api.landing.getLandingInfo();
+  const portfolio = await Api.landing.getPortfolioData();
 
   return {
-    props: { results },
+    props: { portfolio },
     revalidate: 12,
   };
 };

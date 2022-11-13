@@ -1,23 +1,35 @@
 import Http from './http';
-import { TestI } from './types';
+import { PortfolioDataI } from './types';
 
 const LandingAPI = {
-  getLandingInfo: async (): Promise<any> => {
-    const instance = Http.Public();
-
+  getPortfolioData: async (): Promise<any> => {
     try {
-      const response: TestI = await instance.get('/test');
+      const instance = Http.Public();
+      const response = await instance.get<PortfolioDataI>('/collections/portfolio/records', {
+        params: {
+          sort: 'position',
+        },
+      });
 
-      return response.body;
-    } catch (e: any) {
+      return response.data;
+    } catch (error) {
       return {
         success: false,
-        error: {
-          uuid: '',
-          code: '',
-          title: 'Системная ошибка',
-          text: (e as Error).message,
-        },
+        message: 'Something went wrong',
+      };
+    }
+  },
+
+  sendMail: async (data: any): Promise<any> => {
+    try {
+      const instance = Http.Private();
+      const response = await instance.post<PortfolioDataI>('/send-email', data);
+
+      return response.data;
+    } catch (error) {
+      return {
+        success: false,
+        message: 'Something went wrong',
       };
     }
   },

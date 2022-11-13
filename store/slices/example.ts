@@ -1,21 +1,21 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { request } from '@store/operations/app';
 
-interface StateI {
-  example: string;
-}
-
-const initialState: StateI = {
-  example: '',
+const initialState: { stat: string } = {
+  stat: 'data',
 };
 
 export const exampleSlice = createSlice({
   name: 'example',
   initialState,
-  reducers: {
-    setExample: (state, action) => ({ ...state, ...action.payload }),
+  reducers: {},
+  extraReducers: (builder) => {
+    builder.addCase(request.fulfilled, (state, action) => {
+      const data = action.payload;
+
+      state.stat = data;
+    });
   },
 });
-
-export const { setExample } = exampleSlice.actions;
 
 export default exampleSlice.reducer;

@@ -1,0 +1,45 @@
+@import '@styles/variables.scss';
+
+.main {
+    padding-bottom: 50px;
+}
+
+.title {
+    font-size: 20px;
+    font-family: $default-font;
+    font-weight: 600;
+    color: $mine-shaft;
+    margin: 0;
+    margin-bottom: 26px;
+    text-transform: uppercase;
+}
+
+.location {
+    margin-top: 54px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.social {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 47px;
+}
+
+.text, .link {
+    font-size: 20px;
+    font-family: $default-font;
+    font-weight: 400;
+    color: $dove-gray;
+    margin-bottom: 15px;
+}
+
+.link {
+    transition: opacity 300ms ease-in-out;
+
+    &:hover {
+        opacity: .6;
+    }
+}

@@ -44,3 +44,6 @@ yarn-error.log*
 # nginx
 /nginx/logs/*.log
 /nginx/logs/nginx.pid
+
+# server
+/server/pb_data

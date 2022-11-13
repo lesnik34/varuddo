@@ -1,5 +1,5 @@
 const imagesDomains = {
-  development: [],
+  development: ['localhost'],
   prom: [],
 };
 

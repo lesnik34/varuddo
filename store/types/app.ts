@@ -24,5 +24,5 @@ export interface AppRequestProps {
   apiMethod: string;
   data: any;
   beforeCallback?: () => any;
-  afterCallback?: (res: any) => any;
+  afterCallback?: () => any;
 }

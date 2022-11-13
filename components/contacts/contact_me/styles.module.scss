@@ -1,0 +1,123 @@
+@import '@styles/variables.scss';
+
+.main {
+  max-width: 570px;
+}
+
+.inputs {
+  margin-bottom: 10px;
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+  }
+}
+
+.input,
+.text {
+  width: 100%;
+  font-size: 20px;
+  font-family: $default-font;
+  font-weight: 400;
+  padding: 9px 12px;
+  background-color: transparent;
+  border-radius: 3px;
+  border: 2px solid rgba($mine-shaft, .7);
+  outline: none;
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px $background inset !important;
+  }
+}
+
+.input {
+  &:first-child {
+    margin-bottom: 10px;
+  }
+
+  &.error {
+    outline: 1px solid $error;
+  }
+
+  @media (min-width: $tablet-width) {
+    &:first-child {
+      margin-bottom: 0;
+      margin-right: 10px;
+    }
+  }
+}
+
+.text {
+  resize: none;
+  max-height: 130px;
+}
+
+.button_wrapper {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: $tablet-width) {
+    flex-direction: row;
+  }
+}
+
+.button {
+  background-color: $mine-shaft;
+  font-size: 20px;
+  font-family: $default-font;
+  font-weight: 400;
+  border-radius: 3px;
+  padding: 9px 12px;
+  border: none;
+  outline: none;
+  width: 100%;
+  color: $base-white;
+  cursor: pointer;
+  transition: background-color 300ms ease-in-out;
+
+  &:hover,
+  &:focus {
+    background-color: rgba($mine-shaft, 0.8);
+  }
+
+  &:disabled {
+    background-color: rgba($mine-shaft, .7);
+    cursor: auto;
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 230px;
+  }
+}
+
+.errorMessage {
+  font-size: 16px;
+  font-family: $default-font;
+  font-weight: 400;
+  color: $error;
+  margin-top: 10px;
+
+  @media (min-width: $tablet-width) {
+    margin-left: 10px;
+    margin-top: 0;
+    font-size: 18px;
+  }
+}
+
+.successMessage {
+  font-size: 16px;
+  font-family: $default-font;
+  font-weight: 400;
+  color: $success;
+  margin-top: 10px;
+
+  @media (min-width: $tablet-width) {
+    margin-top: 0;
+    margin-left: 10px;
+    font-size: 18px;
+  }
+}

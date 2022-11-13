@@ -6,7 +6,7 @@ const errorHandler = (error: any) => Promise.reject(error);
 const Http = {
   Private: (config?: AxiosRequestConfig, baseUrl?: string) => {
     const instance = axios.create({
-      baseURL: baseUrl || process.env.RES_URL,
+      baseURL: baseUrl || process.env.MAILER_URL,
       timeout: 60000,
       ...(config || {}),
     });

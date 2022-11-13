@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { request } from '@store/operations/app';
 
-import type { AppState, AppLoadingState, AppErrorState } from '../types/app';
+import { AppState, AppLoadingState, AppErrorState } from '../types/app';
 
 const initialState: AppState = {
   loading: {},
@@ -32,7 +32,7 @@ export const appSlice = createSlice({
           loading: {
             ...state.loading,
             [apiName]: {
-              ...(state.loading[apiName] || {}),
+              ...state.loading[apiName],
               [apiMethod]: true,
             },
           },
@@ -41,21 +41,20 @@ export const appSlice = createSlice({
       .addCase(request.fulfilled, (state, action) => {
         const { apiName, apiMethod } = action.meta.arg;
 
-        if (state.loading[apiName] && state.loading[apiName][apiMethod]) {
-          delete state.loading[apiName][apiMethod];
-        }
-        if (state.loading[apiName] && Object.values(state.loading[apiName]).length === 1) {
+        delete state.loading[apiName][apiMethod];
+
+        if (Object.values(state.loading[apiName])) {
           delete state.loading[apiName];
         }
       })
       .addCase(request.rejected, (state, action) => {
         const { apiName, apiMethod, data } = action.meta.arg;
         const { message, code } = action.error;
+        console.warn(message);
 
-        if (state.loading[apiName] && state.loading[apiName][apiMethod]) {
-          delete state.loading[apiName][apiMethod];
-        }
-        if (state.loading[apiName] && Object.values(state.loading[apiName]).length === 1) {
+        delete state.loading[apiName][apiMethod];
+
+        if (Object.values(state.loading[apiName])) {
           delete state.loading[apiName];
         }
 
