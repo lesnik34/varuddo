@@ -1,5 +1,5 @@
 {
-  "RES_URL": "/api",
-  "MAILER_URL": "/mailer",
-  "STATIC_URL": "/api/files"
+  "RES_URL": "https://varuddo.com/api",
+  "MAILER_URL": "https://varuddo.com/mailer",
+  "STATIC_URL": "https://varuddo.com/api/files"
 }
