@@ -23,7 +23,7 @@ const transporter = nodemailer.createTransport({
   secure: true,
 });
 
-app.post('/api/send-email', async (req, res) => {
+app.post('/mailer/send-email', async (req, res) => {
   const { name, contact, text } = req.body;
 
   const mailData = {

@@ -1,4 +1,5 @@
 {
   "RES_URL": "/api",
-  "STATIC_URL": "/api"
+  "MAILER_URL": "/mailer",
+  "STATIC_URL": "/api/files"
 }
