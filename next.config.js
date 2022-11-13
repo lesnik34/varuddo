@@ -1,6 +1,6 @@
 const imagesDomains = {
   development: ['localhost'],
-  prom: [],
+  prom: ['varuddo.com'],
 };
 
 module.exports = {
