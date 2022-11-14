@@ -1,5 +1,7 @@
 require('dotenv').config({ path: '.env.local' });
+const TelegramBot = require('node-telegram-bot-api');
 const express = require('express');
+const axios = require('axios');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
@@ -13,6 +15,7 @@ console.log(process.env.BACK_PORT, process.env.MAILER);
 const port = process.env.BACK_PORT || 5000;
 app.use('/v1', route);
 
+const bot = new TelegramBot(process.env.BOT_KEY);
 const transporter = nodemailer.createTransport({
   port: 465, // true for 465, false for other ports
   host: 'smtp.gmail.com',
@@ -40,6 +43,15 @@ app.post('/mailer/send-email', async (req, res) => {
 
   try {
     const result = await transporter.sendMail(mailData);
+    await bot.sendMessage(
+      process.env.CHAT_ID,
+      `Message from your website!\nName: ${name}\nContact: ${contact}\nMessage: ${text}`,
+    );
+    await bot.sendSticker(
+      process.env.CHAT_ID,
+      'CAACAgIAAxkBAAMQY3Kc8HcD4UmestLEv30qTefeMJEAArckAAJKFJhLyw3BVbosfZwrBA',
+    );
+
     res.send({ status: 'success', data: result.messageId });
   } catch (error) {
     console.log(error);
@@ -47,7 +59,7 @@ app.post('/mailer/send-email', async (req, res) => {
   }
 });
 
-app.get('/api/hello', (req, res) => {
+app.get('/api/hello', async (req, res) => {
   res.send('Hello world!');
 });
 
