@@ -20,11 +20,11 @@ const ContactMe = () => {
 
   const errorMessage = useMemo(() => {
     if (errors?.contact?.type === 'required' || errors?.name?.type === 'required') {
-      return 'Not all fields are filled';
+      return 'Заполните поля';
     }
 
     if (errors?.result) {
-      return 'Something went wrong:(';
+      return 'Чт-то пошло не так:(';
     }
 
     return '';
@@ -37,7 +37,7 @@ const ContactMe = () => {
       setLoading(false);
 
       if (res.status === 'success') {
-        setSuccessMessage('I will contact you soon!');
+        setSuccessMessage('Я скоро с вами свяжусь!');
         return;
       }
 
@@ -65,23 +65,23 @@ const ContactMe = () => {
         <input
           className={cls(styles.input, { [styles.error]: errors.name })}
           type="text"
-          placeholder="Your name"
+          placeholder="Имя"
           {...register('name', { required: true })}
         />
 
         <input
           className={cls(styles.input, { [styles.error]: errors.contact })}
           type="text"
-          placeholder="Your contact"
+          placeholder="Телефон / почта / соц. сеть"
           {...register('contact', { required: true })}
         />
       </div>
 
-      <textarea className={styles.text} cols={30} rows={10} placeholder="Your message" {...register('text')} />
+      <textarea className={styles.text} cols={30} rows={10} placeholder="Сообщение" {...register('text')} />
 
       <div className={styles.button_wrapper}>
         <button className={styles.button} type="submit" disabled={isButtonDisabled}>
-          Send
+          Отправить
         </button>
 
         {errorMessage && <span className={styles.errorMessage}>{errorMessage}</span>}

@@ -47,6 +47,17 @@ const Portfolio: React.FC<PortfolioI> = ({ portfolio }) => {
 
   const gotoNext = () => currentImageIndex + 1 < portfolioList.length && setCurrentIndex(currentImageIndex + 1);
 
+  const LightBoxHeader = () => (
+    <div onClick={() => setLightboxVision(false)} className={styles.lightbox_header}>
+      <button
+        onClick={() => setLightboxVision(false)}
+        type="button"
+        className={styles.lightbox_close}
+        aria-label="Close"
+      />
+    </div>
+  );
+
   return (
     <section className={styles.main}>
       <h1 className="visually-hidden">Portfolio</h1>
@@ -72,6 +83,7 @@ const Portfolio: React.FC<PortfolioI> = ({ portfolio }) => {
         className={styles.lightbox}
         onNext={gotoNext}
         images={portfolioList as ImagesListType}
+        renderHeader={LightBoxHeader}
         currentIndex={currentImageIndex}
         onClose={() => setLightboxVision(false)}
       />

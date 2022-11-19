@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 import useWindowSize from '@hooks/device_size';
 import { Logo } from '@components/icons';
@@ -14,7 +15,9 @@ const Header = () => {
     <header className={styles.main}>
       <div className={styles.wrapper}>
         <div className={styles.logo_wrapper}>
-          <Logo />
+          <Link href="/">
+            <Logo />
+          </Link>
         </div>
 
         <div>{device.isMobileWidth ? <Burger /> : <Navbar />}</div>
