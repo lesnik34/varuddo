@@ -8,12 +8,12 @@ const Contacts = () => (
   <section className={styles.main}>
     <h1 className="visually-hidden">Portfolio</h1>
 
-    <h2 className={styles.title}>Contact me</h2>
+    <h2 className={styles.title}>Способы связи:</h2>
 
     <ContactMe />
 
     <div className={styles.location}>
-      <span className={styles.text}>Based in Moscow</span>
+      {/* <span className={styles.text}>Based in Moscow</span> */}
 
       <a className={styles.link} target="_blank" rel="noreferrer" href="tel:79287771788">
         7 928 777 17 88

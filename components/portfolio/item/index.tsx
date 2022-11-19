@@ -57,6 +57,7 @@ const Item: React.FC<ItemI> = ({ item, portfolioList, setCurrentIndex }) => {
             src={getImagePath(mainPhoto, id, collectionId)}
             alt="Фотография из портфолио"
             blurDataURL={imageShimmer('341px', '426px')}
+            loading="lazy"
             placeholder="blur"
             sizes={`50vw, (min-width: ${MIN_TABLET_WIDTH}) 25vw, (min-width: ${MIN_DESKTOP_WIDTH}) 10vw`}
             fill
