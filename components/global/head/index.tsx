@@ -18,10 +18,13 @@ const CustomHead = () => (
 
     <meta property="og:type" content="WebSite" />
     <meta property="og:title" content="Varuddo" />
-    <meta property="og:image" content="/public/img/profile.jpg" />
+    <meta property="og:image" content="img/profile.jpg" />
     <meta property="og:url" content="https://varuddo.com" />
     <meta property="og:site_name" content="Varuddo" />
-    <meta property="og:description" content="Фотограф" />
+    <meta
+      property="og:description"
+      content="Привет! Меня зовут Лера, я фотограф. Нахожусь в Москве. Снимаю коммерцию, частные съемки и творчество"
+    />
 
     <link rel="apple-touch-icon" sizes="180x180" href="fav/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="fav/favicon-32x32.png" />
