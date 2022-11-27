@@ -11,7 +11,7 @@ const Header = () => (
   <header className={styles.main}>
     <div className={styles.wrapper}>
       <div className={styles.logo_wrapper}>
-        <Link href="/" aria-label="Home">
+        <Link className={styles.link} href="/" aria-label="Home">
           <Logo />
         </Link>
       </div>
