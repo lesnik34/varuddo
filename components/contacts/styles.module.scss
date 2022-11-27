@@ -43,3 +43,29 @@
         opacity: .6;
     }
 }
+
+.description_wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.description {
+    margin: 0;
+    font-size: 18px;
+    max-width: 500px;
+}
+
+.image_wrapper {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin-right: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.image {
+    object-fit: cover;
+    object-position: center ;
+}

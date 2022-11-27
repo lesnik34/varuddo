@@ -5,7 +5,6 @@ import Image from 'next/image';
 import imageShimmer from '@utils/shimmer';
 import { PortfolioListI } from '@api/types';
 import { getImagePath } from '@utils/helpers';
-import { MIN_DESKTOP_WIDTH, MIN_TABLET_WIDTH } from '@utils/constants';
 
 import styles from './styles.module.scss';
 
@@ -56,10 +55,10 @@ const Item: React.FC<ItemI> = ({ item, portfolioList, setCurrentIndex }) => {
             }}
             src={getImagePath(mainPhoto, id, collectionId)}
             alt="Фотография из портфолио"
-            blurDataURL={imageShimmer('341px', '426px')}
+            blurDataURL={imageShimmer()}
             loading="lazy"
             placeholder="blur"
-            sizes={`50vw, (min-width: ${MIN_TABLET_WIDTH}) 25vw, (min-width: ${MIN_DESKTOP_WIDTH}) 10vw`}
+            sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 10vw"
             fill
           />
         </div>
@@ -77,9 +76,10 @@ const Item: React.FC<ItemI> = ({ item, portfolioList, setCurrentIndex }) => {
               }}
               src={getImagePath(additionalPhoto, id, collectionId)}
               alt="Фотография из портфолио"
-              blurDataURL={imageShimmer('341px', '426px')}
+              blurDataURL={imageShimmer()}
+              loading="lazy"
               placeholder="blur"
-              sizes={`50vw, (min-width: ${MIN_TABLET_WIDTH}) 25vw, (min-width: ${MIN_DESKTOP_WIDTH}) 10vw`}
+              sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 10vw"
               fill
             />
           </div>

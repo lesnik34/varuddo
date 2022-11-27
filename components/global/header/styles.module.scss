@@ -43,3 +43,17 @@
         margin-bottom: 26px;
     }
 }
+
+.burger {
+    @media (min-width: $tablet-width) {
+        display: none;
+    }
+}
+
+.nav {
+    display: none;
+
+    @media (min-width: $tablet-width) {
+        display: block;
+    }
+}

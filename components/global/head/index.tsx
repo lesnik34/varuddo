@@ -10,11 +10,15 @@ const CustomHead = () => (
 
     <meta name="title" content="Varuddo" />
     <meta itemProp="keywords" name="keywords" content="Фотограф, Фотография, фотосессия" />
-    <meta itemProp="description" name="description" content="Фотограф" />
+    <meta
+      itemProp="description"
+      name="description"
+      content="Привет! Меня зовут Лера, я фотограф. Нахожусь в Москве. Снимаю коммерцию, частные съемки и творчество"
+    />
 
     <meta property="og:type" content="WebSite" />
     <meta property="og:title" content="Varuddo" />
-    <meta property="og:image" content="https://static.url/image.png" />
+    <meta property="og:image" content="/public/img/profile.jpg" />
     <meta property="og:url" content="https://varuddo.com" />
     <meta property="og:site_name" content="Varuddo" />
     <meta property="og:description" content="Фотограф" />

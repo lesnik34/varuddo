@@ -1,5 +1,5 @@
 const imagesDomains = {
-  development: ['localhost'],
+  development: ['localhost', 'varuddo.com', '127.0.0.1'],
   prom: ['varuddo.com'],
 };
 

@@ -10,10 +10,11 @@ const ContactMe = () => {
   const [successMessage, setSuccessMessage] = useState('');
   const [isLoading, setLoading] = useState(false);
   const {
+    reset,
     register,
-    handleSubmit,
     setError,
     clearErrors,
+    handleSubmit,
     formState: { errors },
   } = useForm();
   const isButtonDisabled = !!errors.result || isLoading;
@@ -37,6 +38,7 @@ const ContactMe = () => {
       setLoading(false);
 
       if (res.status === 'success') {
+        reset();
         setSuccessMessage('Я скоро с вами свяжусь!');
         return;
       }

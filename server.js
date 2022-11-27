@@ -59,6 +59,11 @@ app.post('/mailer/send-email', async (req, res) => {
   }
 });
 
+app.post('/api/send-email', async (req, res) => {
+  res.send({ status: 'success', data: 'result.messageId' });
+  // res.send({ status: 'error', data: null });
+});
+
 app.get('/api/hello', async (req, res) => {
   res.send('Hello world!');
 });
