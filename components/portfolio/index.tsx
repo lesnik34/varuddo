@@ -87,16 +87,10 @@ const Portfolio: React.FC<PortfolioI> = ({ portfolio }) => {
         currentIndex={currentImageIndex}
         onClose={() => setLightboxVision(false)}
         pageTransitionConfig={{
-          from: {
-            clipPath: 'polygon(0% 0%, 0% 100%, 0% 100%, 0% 0%)',
-          },
-          enter: {
-            clipPath: 'polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%)',
-          },
-          leave: {
-            clipPath: 'polygon(100% 0%, 100% 100%, 100% 100%, 100% 0%)',
-          },
-          config: { mass: 1, tension: 210, friction: 20 },
+          from: { transform: 'scale(0.75)', opacity: 0 },
+          enter: { transform: 'scale(1)', opacity: 1 },
+          leave: { opacity: 0 },
+          config: { mass: 1, tension: 320, friction: 32 },
         }}
       />
     </section>
