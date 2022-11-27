@@ -40,7 +40,9 @@
 .image {
     object-fit: contain;
     object-position: center;
-    transition: transform 300ms ease-in-out ;
+    transition: transform 300ms ease-in-out;
+    border: none;
+    clip-path: inset(0.5px);
 
     &:hover {
         transform: scale(0.9);

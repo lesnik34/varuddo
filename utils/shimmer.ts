@@ -3,18 +3,18 @@ const shimmer = (w: string, h: string) => `
   <defs>
     <linearGradient id="g">
       <stop stop-color="#FFFFFF" offset="20%" />
-      <stop stop-color="#F4F4F4" offset="50%" />
+      <stop stop-color="#F2F2F2" offset="50%" />
       <stop stop-color="#FFFFFF" offset="70%" />
     </linearGradient>
   </defs>
-  <rect width="${w}" height="${h}" fill="#FFFFFF" />
+  <rect width="${w}" height="${h}" fill="#ffffff" />
   <rect id="r" width="${w}" height="${h}" fill="url(#g)" />
-  <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1s" repeatCount="indefinite"  />
+  <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="0.8s" repeatCount="indefinite"  />
 </svg>`;
 
 const toBase64 = (str: string) =>
   typeof window === 'undefined' ? Buffer.from(str).toString('base64') : window.btoa(str);
 
-const imageShimmer = (w: string, h: string) => `data:image/svg+xml;base64,${toBase64(shimmer(w, h))}`;
+const imageShimmer = () => `data:image/svg+xml;base64,${toBase64(shimmer('1000px', '1000px'))}`;
 
 export default imageShimmer;
