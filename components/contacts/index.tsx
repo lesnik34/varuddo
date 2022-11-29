@@ -34,6 +34,9 @@ const Contacts = () => (
     </div>
 
     <div className={styles.social}>
+      <a className={styles.link} target="_blank" rel="noreferrer" href="https://wa.me/79287771788">
+        WhatsApp
+      </a>
       <a
         className={styles.link}
         target="_blank"
