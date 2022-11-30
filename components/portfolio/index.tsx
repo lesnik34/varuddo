@@ -1,6 +1,8 @@
 import React, { useMemo, useState } from 'react';
 import Lightbox, { ImagesListType } from 'react-spring-lightbox';
+import Image from 'next/image';
 
+import imageShimmer from '@utils/shimmer';
 import { PortfolioListI } from '@api/types';
 import { getImagePath } from '@utils/helpers';
 
@@ -93,6 +95,10 @@ const Portfolio: React.FC<PortfolioI> = ({ portfolio }) => {
           config: { mass: 1, tension: 320, friction: 32 },
         }}
       />
+
+      <div className="visually-hidden">
+        <Image src={imageShimmer()} blurDataURL={imageShimmer()} loading="lazy" placeholder="blur" fill alt="hidden" />
+      </div>
     </section>
   );
 };
