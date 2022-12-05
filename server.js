@@ -69,7 +69,7 @@ app.get('/api/hello', async (req, res) => {
 });
 
 app.use(cors({
-  origin: 'https://varuddo.com'
+  origin: 'https://www.varuddo.com'
 }));
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
