@@ -25,7 +25,8 @@ const ContactMe = () => {
     }
 
     if (errors?.result) {
-      return 'Чт-то пошло не так:(';
+      console.log(errors);
+      return 'Что-то пошло не так:(';
     }
 
     return '';
