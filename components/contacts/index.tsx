@@ -1,5 +1,5 @@
 import React from 'react';
-// import Image from 'next/image';
+import Image from 'next/image';
 
 import ContactMe from './contact_me';
 
@@ -9,21 +9,23 @@ const Contacts = () => (
   <section className={styles.main}>
     <h1 className="visually-hidden">Portfolio</h1>
 
-    {/* <div className={styles.description_wrapper}>
-      <div className={styles.image_wrapper}>
+    <h2 className={styles.title}>Контакты:</h2>
+
+    <div className={styles.description_wrapper}>
+      {/* <div className={styles.image_wrapper}>
         <Image className={styles.image} src="/img/profile.jpg" alt="Фотограф" fill />
-      </div>
+      </div> */}
 
       <p className={styles.description}>
-        Привет! Меня зовут Лера, я фотограф. Нахожусь в Москве. Снимаю коммерцию, частные съемки и творчество
+        Привет! Меня зовут Лера, я фотограф. Снимаю в Москве. Провожу коммерческие и индивидуальные съемки. По всем вопросам можете связаться со мной удобным для вас способом
       </p>
-    </div> */}
-
-    <h2 className={styles.title}>Способы связи:</h2>
+    </div>
 
     <ContactMe />
 
     <div className={styles.location}>
+    {/* <span className={styles.text}>Локация - Москва</span> */}
+
       <a className={styles.link} target="_blank" rel="noreferrer" href="tel:79287771788">
         7 928 777 17 88
       </a>

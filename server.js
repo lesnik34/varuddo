@@ -68,7 +68,9 @@ app.get('/api/hello', async (req, res) => {
   res.send('Hello world!');
 });
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://varuddo.com'
+}));
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
