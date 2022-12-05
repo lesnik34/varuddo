@@ -17,14 +17,15 @@ const Contacts = () => (
       </div> */}
 
       <p className={styles.description}>
-        Привет! Меня зовут Лера, я фотограф. Снимаю в Москве. Провожу коммерческие и индивидуальные съемки. По всем вопросам можете связаться со мной удобным для вас способом
+        Привет! Меня зовут Лера, я фотограф. Снимаю в Москве. Провожу коммерческие и индивидуальные съемки. По всем
+        вопросам можете связаться со мной удобным для вас способом
       </p>
     </div>
 
     <ContactMe />
 
     <div className={styles.location}>
-    {/* <span className={styles.text}>Локация - Москва</span> */}
+      {/* <span className={styles.text}>Локация - Москва</span> */}
 
       <a className={styles.link} target="_blank" rel="noreferrer" href="tel:79287771788">
         7 928 777 17 88
