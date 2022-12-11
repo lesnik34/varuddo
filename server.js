@@ -9,6 +9,8 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cors());
+app.options('*', cors());
 
 const route = express.Router();
 console.log(process.env.BACK_PORT, process.env.MAILER);
@@ -68,7 +70,6 @@ app.get('/api/hello', async (req, res) => {
   res.send('Hello world!');
 });
 
-app.use(cors());
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
