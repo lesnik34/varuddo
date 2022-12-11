@@ -42,28 +42,22 @@ app.post('/mailer/send-email', async (req, res) => {
     <p>Message: ${text}</p>
     `,
   };
-  console.log(req);
-  try {
-    // const result = await transporter.sendMail(mailData);
-    // await bot.sendMessage(
-    //   process.env.CHAT_ID,
-    //   `Message from your website!\nName: ${name}\nContact: ${contact}\nMessage: ${text}`,
-    // );
-    // await bot.sendSticker(
-    //   process.env.CHAT_ID,
-    //   'CAACAgIAAxkBAAMQY3Kc8HcD4UmestLEv30qTefeMJEAArckAAJKFJhLyw3BVbosfZwrBA',
-    // );
 
-    res.send({ status: 'success', data: 'result.messageId' });
+  try {
+    const result = await transporter.sendMail(mailData);
+    await bot.sendMessage(
+      process.env.CHAT_ID,
+      `Message from your website!\nName: ${name}\nContact: ${contact}\nMessage: ${text}`,
+    );
+    await bot.sendSticker(
+      process.env.CHAT_ID,
+      'CAACAgIAAxkBAAMQY3Kc8HcD4UmestLEv30qTefeMJEAArckAAJKFJhLyw3BVbosfZwrBA',
+    );
+
+    res.send({ status: 'success', data: result.messageId });
   } catch (error) {
-    console.log(error);
     res.send({ status: 'error', data: null });
   }
-});
-
-app.post('/api/send-email', async (req, res) => {
-  res.send({ status: 'success', data: 'result.messageId' });
-  // res.send({ status: 'error', data: null });
 });
 
 app.get('/api/hello', async (req, res) => {
