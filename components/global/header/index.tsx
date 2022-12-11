@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import { Logo } from '@components/icons';
 import Navbar from '@components/navbar';
-import Burger from '@/components/burger';
+// import Burger from '@/components/burger';
 
 import styles from './styles.module.scss';
 
@@ -16,9 +16,9 @@ const Header = () => (
         </Link>
       </div>
 
-      <div className={styles.burger}>
+      {/* <div className={styles.burger}>
         <Burger />
-      </div>
+      </div> */}
 
       <div className={styles.nav}>
         <Navbar />

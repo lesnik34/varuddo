@@ -50,14 +50,6 @@
     }
 }
 
-.nav {
-    display: none;
-
-    @media (min-width: $tablet-width) {
-        display: block;
-    }
-}
-
 .link {
     display: block;
 }

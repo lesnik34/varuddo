@@ -1,11 +1,7 @@
 @import '@styles/variables.scss';
 
 .main {
-    padding-top: 80px;
-
-    @media (min-width: $tablet-width) {
-        padding-top: 0;
-    }
+    padding-top: 0;
 }
 
 .list {
@@ -30,11 +26,11 @@
 }
 
 .link {
-    font-size: 18px;
+    font-size: 14px;
     font-family: $default-font;
     font-weight: 600;
     text-transform: uppercase;
-    color: $base-white;
+    color: $mine-shaft;
     transition: color 300ms ease-in-out, opacity 200ms ease-in-out;
 
     &.exact {
@@ -46,6 +42,14 @@
     }
 
     @media (min-width: $tablet-width) {
-        color: $mine-shaft;
+        font-size: 18px;
+    }
+}
+
+.portfolio {
+    display: none;
+
+    @media (min-width: $tablet-width) {
+        display: block;
     }
 }

@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <nav className={styles.main}>
       <ul className={styles.list}>
-        <li className={styles.item}>
+        <li className={cls(styles.item, styles.portfolio)}>
           <Link className={cls(styles.link, { [styles.exact]: pathname === '/' })} href="/">
             Portfolio
           </Link>
