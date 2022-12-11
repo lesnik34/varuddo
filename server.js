@@ -42,15 +42,16 @@ app.post('/mailer/send-email', async (req, res) => {
   };
 
   try {
-    const result = await transporter.sendMail(mailData);
-    await bot.sendMessage(
-      process.env.CHAT_ID,
-      `Message from your website!\nName: ${name}\nContact: ${contact}\nMessage: ${text}`,
-    );
-    await bot.sendSticker(
-      process.env.CHAT_ID,
-      'CAACAgIAAxkBAAMQY3Kc8HcD4UmestLEv30qTefeMJEAArckAAJKFJhLyw3BVbosfZwrBA',
-    );
+    // const result = await transporter.sendMail(mailData);
+    // await bot.sendMessage(
+    //   process.env.CHAT_ID,
+    //   `Message from your website!\nName: ${name}\nContact: ${contact}\nMessage: ${text}`,
+    // );
+    // await bot.sendSticker(
+    //   process.env.CHAT_ID,
+    //   'CAACAgIAAxkBAAMQY3Kc8HcD4UmestLEv30qTefeMJEAArckAAJKFJhLyw3BVbosfZwrBA',
+    // );
+    console.log(req);
 
     res.send({ status: 'success', data: result.messageId });
   } catch (error) {
@@ -69,7 +70,7 @@ app.get('/api/hello', async (req, res) => {
 });
 
 app.use(cors({
-  origin: 'https://www.varuddo.com'
+  origin: 'https://varuddo.com'
 }));
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
