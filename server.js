@@ -40,7 +40,7 @@ app.post('/mailer/send-email', async (req, res) => {
     <p>Message: ${text}</p>
     `,
   };
-
+  console.log(req);
   try {
     // const result = await transporter.sendMail(mailData);
     // await bot.sendMessage(
@@ -51,7 +51,6 @@ app.post('/mailer/send-email', async (req, res) => {
     //   process.env.CHAT_ID,
     //   'CAACAgIAAxkBAAMQY3Kc8HcD4UmestLEv30qTefeMJEAArckAAJKFJhLyw3BVbosfZwrBA',
     // );
-    console.log(req);
 
     res.send({ status: 'success', data: result.messageId });
   } catch (error) {
