@@ -52,7 +52,7 @@ app.post('/mailer/send-email', async (req, res) => {
     //   'CAACAgIAAxkBAAMQY3Kc8HcD4UmestLEv30qTefeMJEAArckAAJKFJhLyw3BVbosfZwrBA',
     // );
 
-    res.send({ status: 'success', data: result.messageId });
+    res.send({ status: 'success', data: 'result.messageId' });
   } catch (error) {
     console.log(error);
     res.send({ status: 'error', data: null });
