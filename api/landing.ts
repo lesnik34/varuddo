@@ -8,7 +8,7 @@ const LandingAPI = {
       const response = await instance.get<PortfolioDataI>('/collections/portfolio/records', {
         params: {
           sort: 'position',
-          perPage: 60,
+          perPage: 200,
         },
       });
 
