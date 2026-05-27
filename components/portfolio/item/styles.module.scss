@@ -1,50 +1,105 @@
 @import '@styles/variables.scss';
 
 .main {
-    display: flex;
+  display: flex;
 
-    &.left_small {
-        & .main_photo {
-            padding: 15px 0;
-        }
+  &.left_small {
+    & .main_photo {
+      padding: 15px 0;
     }
+  }
 
-    &.right_small {
-        & .additional_photo {
-            padding: 15px 0;
-        }
+  &.right_small {
+    & .additional_photo {
+      padding: 15px 0;
     }
+  }
 
-    &.equals_small {
-        & .main_photo, & .additional_photo {
-            padding: 15px 0;
-        }
+  &.equals_small {
+    & .main_photo,
+    & .additional_photo {
+      padding: 15px 0;
     }
+  }
 }
 
 .additional_photo {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 .image_wrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: $background;
+}
+
+.gallery_link {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: 100%;
+  -webkit-tap-highlight-color: transparent;
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.loading {
+  position: relative;
+}
+
+.loading_overlay {
+  position: absolute;
+  z-index: 3;
+  background: linear-gradient(
+    100deg,
+    rgba($base-black, 0.04) 0%,
+    rgba($base-black, 0.12) 42%,
+    rgba($base-black, 0.04) 74%
+  );
+  pointer-events: none;
+  transform: translateX(-120%);
+  animation: shimmer-move 1s ease-in-out infinite;
+  inset: 0;
+}
+
+@keyframes shimmer-move {
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loading_overlay {
+    animation: none;
+    transform: none;
+  }
 }
 
 .main_photo,
 .additional_photo {
-    flex-grow: 1;
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 .image {
-    object-fit: contain;
-    object-position: center;
-    transition: transform 300ms ease-in-out;
-    border: none;
-    clip-path: inset(0.5px);
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  border: none;
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
 
-    &:hover {
-        transform: scale(0.9);
-    }
+.loaded {
+  & .image {
+    opacity: 1;
+  }
 }

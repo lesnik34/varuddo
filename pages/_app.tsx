@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app';
 import { Provider } from 'react-redux';
 
 import { store } from '@store/.';
+import 'photoswipe/dist/photoswipe.css';
 import '@styles/index.scss';
 
 function MyApp({ Component, pageProps }: AppProps) {

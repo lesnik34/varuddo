@@ -8,7 +8,8 @@ const Contact = () => (
     seo={{
       title: 'Контакты | Varuddo',
       canonical: 'https://varuddo.com/contact',
-      description: 'Контакты фотографа Varuddo: Instagram и Telegram.',
+      description:
+        'Фотограф Лера (Varuddo), Москва. Коммерческие и индивидуальные съемки. Telegram: @varuddo, email: varuddo@gmail.com.',
     }}
   >
     <Contacts />

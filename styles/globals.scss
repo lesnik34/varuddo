@@ -20,3 +20,38 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.pswp {
+  --pswp-bg: #0d0d0f;
+  --pswp-placeholder-bg: #0d0d0f;
+  --pswp-icon-color: #f4f4f4;
+  --pswp-icon-color-secondary: #111;
+  --pswp-icon-stroke-color: transparent;
+  --pswp-error-text-color: #f4f4f4;
+}
+
+.pswp__button {
+  opacity: 0.78;
+  transition: opacity 220ms ease-in-out;
+}
+
+.pswp__button:hover,
+.pswp__button:focus-visible {
+  opacity: 1;
+}
+
+.pswp__button--zoom {
+  display: none;
+}
+
+.pswp__counter {
+  font-family: $default-font;
+  letter-spacing: 0.14em;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: rgba($base-white, 0.84);
+}
+
+.pswp__top-bar {
+  padding: 10px 8px 0;
+}
