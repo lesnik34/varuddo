@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import imageShimmer from '@utils/shimmer';
 import { PortfolioListI } from '@api/types';
-import { getImagePath } from '@utils/helpers';
+import { getImagePath, getImageThumbPath } from '@utils/helpers';
 
 import styles from './styles.module.scss';
 
@@ -53,12 +53,12 @@ const Item: React.FC<ItemI> = ({ item, portfolioList, setCurrentIndex }) => {
               const index = portfolioList.findIndex((el) => el.src === image);
               setCurrentIndex(index);
             }}
-            src={getImagePath(mainPhoto, id, collectionId)}
+            src={getImageThumbPath(mainPhoto, id, collectionId)}
             alt="Фотография из портфолио"
             blurDataURL={imageShimmer()}
             loading="lazy"
             placeholder="blur"
-            sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 10vw"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
             fill
           />
         </div>
@@ -74,12 +74,12 @@ const Item: React.FC<ItemI> = ({ item, portfolioList, setCurrentIndex }) => {
                 const index = portfolioList.findIndex((el) => el.src === image);
                 setCurrentIndex(index);
               }}
-              src={getImagePath(additionalPhoto, id, collectionId)}
+              src={getImageThumbPath(additionalPhoto, id, collectionId)}
               alt="Фотография из портфолио"
               blurDataURL={imageShimmer()}
               loading="lazy"
               placeholder="blur"
-              sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 10vw"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
               fill
             />
           </div>

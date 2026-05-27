@@ -11,7 +11,13 @@ interface HomeI {
 }
 
 const Home: React.FC<HomeI> = ({ portfolio }) => (
-  <Layout>
+  <Layout
+    seo={{
+      title: 'Varuddo | Фотограф в Москве',
+      canonical: 'https://varuddo.com/',
+      description: 'Портфолио фотографа в Москве: коммерческие, индивидуальные и творческие съемки.',
+    }}
+  >
     <Portfolio portfolio={'items' in portfolio ? portfolio.items : []} />
   </Layout>
 );
@@ -21,7 +27,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: { portfolio },
-    revalidate: 12,
+    revalidate: 600,
   };
 };
 

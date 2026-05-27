@@ -10,6 +10,7 @@ module.exports = {
     defaultLocale: 'ru',
   },
   images: {
+    unoptimized: true,
     domains: imagesDomains[process.env.ENV_MODE],
   },
 };

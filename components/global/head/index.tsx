@@ -1,30 +1,40 @@
 import React from 'react';
 import Head from 'next/head';
 
-const CustomHead = () => (
+interface CustomHeadI {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
+  noIndex?: boolean;
+}
+
+const defaults = {
+  title: 'Varuddo',
+  canonical: 'https://varuddo.com',
+  ogImage: 'https://varuddo.com/img/profile.jpg',
+  description: 'Привет! Меня зовут Лера, я фотограф. Нахожусь в Москве. Снимаю коммерцию, частные съемки и творчество',
+};
+
+const CustomHead: React.FC<CustomHeadI> = ({ title, description, canonical, ogImage, noIndex = false }) => (
   <Head>
     <title key="title" itemProp="headline">
-      Varuddo
+      {title || defaults.title}
     </title>
-    <link rel="canonical" href="https://varuddo.com" />
+    <link rel="canonical" href={canonical || defaults.canonical} />
 
-    <meta name="title" content="Varuddo" />
+    <meta name="title" content={title || defaults.title} />
     <meta itemProp="keywords" name="keywords" content="Фотограф, Фотография, фотосессия" />
-    <meta
-      itemProp="description"
-      name="description"
-      content="Привет! Меня зовут Лера, я фотограф. Нахожусь в Москве. Снимаю коммерцию, частные съемки и творчество"
-    />
+    <meta itemProp="description" name="description" content={description || defaults.description} />
+    {noIndex && <meta name="robots" content="noindex,nofollow" />}
 
-    <meta property="og:type" content="WebSite" />
-    <meta property="og:title" content="Varuddo" />
-    <meta property="og:image" content="img/profile.jpg" />
-    <meta property="og:url" content="https://varuddo.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title || defaults.title} />
+    <meta property="og:image" content={ogImage || defaults.ogImage} />
+    <meta property="og:url" content={canonical || defaults.canonical} />
     <meta property="og:site_name" content="Varuddo" />
-    <meta
-      property="og:description"
-      content="Привет! Меня зовут Лера, я фотограф. Нахожусь в Москве. Снимаю коммерцию, частные съемки и творчество"
-    />
+    <meta property="og:description" content={description || defaults.description} />
+    <meta property="og:locale" content="ru_RU" />
 
     <link rel="apple-touch-icon" sizes="180x180" href="fav/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="fav/favicon-32x32.png" />

@@ -20,20 +20,6 @@ const LandingAPI = {
       };
     }
   },
-
-  sendMail: async (data: any): Promise<any> => {
-    try {
-      const instance = Http.Private();
-      const response = await instance.post<PortfolioDataI>('/send-email', data);
-
-      return response.data;
-    } catch (error) {
-      return {
-        success: false,
-        message: 'Something went wrong',
-      };
-    }
-  },
 };
 
 export default LandingAPI;

@@ -10,11 +10,18 @@ import styles from './styles.module.scss';
 
 interface LayoutI {
   children: JSX.Element | React.ReactNode;
+  seo?: {
+    title?: string;
+    description?: string;
+    canonical?: string;
+    ogImage?: string;
+    noIndex?: boolean;
+  };
 }
 
-const Layout: React.FC<LayoutI> = ({ children }) => (
+const Layout: React.FC<LayoutI> = ({ children, seo }) => (
   <>
-    <CustomHead />
+    <CustomHead {...seo} />
 
     <div className="container">
       <div className={styles.wrapper}>
